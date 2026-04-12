@@ -1,0 +1,14 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mental health icon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffe7c7" />
+      <stop offset="100%" stop-color="#d8f2ea" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="120" height="120" rx="28" fill="url(#bg)" stroke="#1f7a6b" stroke-width="4" />
+  <path d="M64 98c-16 0-30-13-30-30 0-14 10-26 24-29 8-2 16 1 22 6" fill="none" stroke="#1f7a6b" stroke-width="7" stroke-linecap="round" />
+  <path d="M46 72c4-5 10-8 18-8 9 0 15 4 19 11" fill="none" stroke="#ff6b2d" stroke-width="7" stroke-linecap="round" />
+  <circle cx="52" cy="56" r="4.5" fill="#11201c" />
+  <circle cx="74" cy="56" r="4.5" fill="#11201c" />
+  <path d="M89 38c4 6 7 12 7 18 0 9-7 16-16 16-5 0-9-2-12-6-3 4-7 6-12 6-9 0-16-7-16-16 0-12 9-22 20-22 4 0 7 1 10 3 3-2 6-3 9-3z" fill="none" stroke="#ff6b2d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

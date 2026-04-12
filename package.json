@@ -1,0 +1,16 @@
+{
+  "name": "the-real-world-cirricullum",
+  "version": "1.0.0",
+  "description": "A simple, deployable website to teach practical real-world skills that many people never learn in school.",
+  "main": "script.js",
+  "scripts": {
+    "dev": "live-server . --port=8080 --open=index.html",
+    "start": "npm run dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
