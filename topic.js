@@ -2770,7 +2770,14 @@ function mergeAndEnsureQuizQuestions(levelData, selectedTopic, minimum = 3) {
 }
 
 function renderQuiz(selectedTopic, levelData, level) {
-  const questions = mergeAndEnsureQuizQuestions(levelData, selectedTopic, 3);
+  const questions = mergeAndEnsureQuizQuestions(levelData, selectedTopic, 3).map((q) => {
+    const indices = q.options.map((_, i) => i);
+    for (let i = indices.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [indices[i], indices[j]] = [indices[j], indices[i]];
+    }
+    return { ...q, options: indices.map((i) => q.options[i]), answer: indices.indexOf(q.answer) };
+  });
   if (!Array.isArray(questions) || questions.length === 0) {
     return;
   }
