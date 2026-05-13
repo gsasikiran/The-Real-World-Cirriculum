@@ -5,9 +5,78 @@ const LEVEL_LABELS = {
   advanced: "Advanced"
 };
 
+const TOPIC_VISUALS = {
+  "personal-finance": {
+    emoji: "💰",
+    tagline: "Because 'I'll figure out money later' is how you end up broke at 30 😅",
+    funFact: "If you save just $5 a day starting at age 15, you could have over $55,000 by age 30 — just from one small daily choice!",
+    moduleEmojis: ["📊", "💳", "📈", "🏦", "🎯", "💡"]
+  },
+  "law-for-daily-life": {
+    emoji: "⚖️",
+    tagline: "Know your rights — so nobody can ever take advantage of you",
+    funFact: "You CAN get a refund on a defective product even if the store says 'no refunds'. Consumer protection laws exist to protect YOU!",
+    moduleEmojis: ["📝", "🔍", "💬", "📋", "🛡️", "🏛️"]
+  },
+  "personal-safety-defence": {
+    emoji: "🛡️",
+    tagline: "Stay safe, stay smart — prevention beats reaction every time",
+    funFact: "Most people freeze in dangerous situations because they've never mentally rehearsed what to do. Preparing now changes that completely.",
+    moduleEmojis: ["👀", "🗣️", "📱", "🗺️", "💪", "🔒"]
+  },
+  "health-first-aid": {
+    emoji: "🏥",
+    tagline: "Your body is your only permanent home — time to take care of it!",
+    funFact: "Learning CPR takes about 30 minutes and could one day save the life of someone you love. Red Cross offers free training sessions!",
+    moduleEmojis: ["🩹", "🚑", "😴", "🥗", "💊", "🏃"]
+  },
+  "mental-health-emotional-skills": {
+    emoji: "🧠",
+    tagline: "Your mental fitness matters just as much as your physical fitness",
+    funFact: "The 'fight or flight' stress response takes just 90 seconds to peak and fade — but only if you don't keep feeding it with anxious thoughts!",
+    moduleEmojis: ["😤", "🤔", "💪", "🔄", "🌱", "🏆"]
+  },
+  "communication-negotiation": {
+    emoji: "💬",
+    tagline: "The one skill that levels up EVERY part of your life — friendships, jobs, everything",
+    funFact: "People who know how to negotiate earn 7–15% more over their careers. That's tens of thousands of dollars just for knowing how to ask!",
+    moduleEmojis: ["🗣️", "👂", "🤝", "📝", "⚡", "🎯"]
+  },
+  "career-work-literacy": {
+    emoji: "🚀",
+    tagline: "Build the career you actually want — not just the one that happens to you",
+    funFact: "Around 80% of jobs are filled through connections, not job ads. The people you know — and how you treat them — matter more than you think!",
+    moduleEmojis: ["📄", "🤝", "💼", "🎯", "💡", "📈"]
+  },
+  "digital-literacy-cyber-safety": {
+    emoji: "🔐",
+    tagline: "Stay one step ahead of scammers and hackers online",
+    funFact: "The most common password is still '123456'. Hackers crack it in under 1 second. A password manager changes everything — for free!",
+    moduleEmojis: ["🔑", "🎣", "💾", "🔒", "👾", "📱"]
+  },
+  "home-life-admin": {
+    emoji: "🏠",
+    tagline: "Adult life skills they forgot to teach you at school — until now",
+    funFact: "Most people accidentally pay hundreds in late fees, forgotten subscriptions, and avoidable costs every year. A few simple habits stop all of it.",
+    moduleEmojis: ["🧾", "🔧", "📋", "🛒", "📅", "💡"]
+  },
+  "cooking-eating": {
+    emoji: "🍳",
+    tagline: "Cook your own food = save money + eat better + impress literally everyone",
+    funFact: "People who cook at home save an average of $3,000–$5,000 a year compared to eating out. That's a real holiday fund from just cooking!",
+    moduleEmojis: ["🥘", "🔪", "🥗", "🛒", "⏱️", "🍽️"]
+  },
+  "calling-handling-emergency-situations": {
+    emoji: "🚨",
+    tagline: "When seconds count, knowing what to do can save a life",
+    funFact: "Emergency dispatchers are trained to guide you through the entire situation over the phone. You don't need to know everything — just call!",
+    moduleEmojis: ["📞", "🚒", "🩺", "🧯", "🏃", "📋"]
+  }
+};
+
 const MENTAL_HEALTH_LEVEL_CONTENT = {
   beginner: {
-    intro: "Build emotional foundations: stress control, calmer decisions, and daily discipline.",
+    intro: "Feeling stressed, anxious, or just overwhelmed sometimes? That's literally part of being a teenager. 😅 The good news: your brain can be trained to handle it way better. Let's start building your emotional toolkit.",
     modules: [
       {
         title: "Stress management basics",
@@ -83,7 +152,7 @@ const MENTAL_HEALTH_LEVEL_CONTENT = {
     ]
   },
   intermediate: {
-    intro: "Train execution under pressure: conflict handling, failure recovery, and decision quality.",
+    intro: "You've got the basics — now let's train for real life. Conflicts, failures, tough situations under pressure... this level is where you build actual mental toughness.",
     modules: [
       {
         title: "Conflict resolution in real situations",
@@ -158,7 +227,7 @@ const MENTAL_HEALTH_LEVEL_CONTENT = {
     ]
   },
   advanced: {
-    intro: "Build long-term emotional architecture: discipline systems, confident leadership, and composure under uncertainty.",
+    intro: "This is elite-level emotional intelligence — the mindset that separates people who thrive under pressure from those who break. If you've made it here, you're ready.",
     modules: [
       {
         title: "Long-term discipline design",
@@ -227,7 +296,7 @@ const MENTAL_HEALTH_LEVEL_CONTENT = {
 
 const PERSONAL_FINANCE_LEVEL_CONTENT = {
   beginner: {
-    intro: "Build strong money foundations before chasing returns.",
+    intro: "Before you dream about investing, make sure your money basics are solid first. Think of it like leveling up in a game — you can't skip to the boss battle! 🎮 Let's build your base.",
     modules: [
       {
         title: "Money basics and account setup",
@@ -297,7 +366,7 @@ const PERSONAL_FINANCE_LEVEL_CONTENT = {
     ]
   },
   intermediate: {
-    intro: "Move from basic control to deliberate allocation and product selection.",
+    intro: "You know the basics — now let's be smart about where your money actually goes. Every dollar should have a job, and you're about to become the manager.",
     modules: [
       {
         title: "Asset allocation and platform choice",
@@ -356,7 +425,7 @@ const PERSONAL_FINANCE_LEVEL_CONTENT = {
     ]
   },
   advanced: {
-    intro: "Use long-term systems, policy-based decisions, and risk controls. Master advanced instruments like ETFs.",
+    intro: "This is how real wealth is built — not luck, not shortcuts — just smart systems, discipline, and good decisions repeated over time. Welcome to advanced money thinking.",
     modules: [
       {
         title: "Master ETFs and advanced investment instruments",
@@ -460,7 +529,7 @@ const PERSONAL_FINANCE_LEVEL_CONTENT = {
 // LAW FOR DAILY LIFE - Everyday scenarios with practical guidance
 const LAW_LEVEL_CONTENT = {
   beginner: {
-    intro: "Learn your rights in everyday situations and how to document properly.",
+    intro: "You have way more rights than you probably know about! Refund on a broken product? Yes! Protection from sneaky contracts? Absolutely! Let's find out what the law actually says.",
     modules: [
       {
         title: "Keep records for all important transactions",
@@ -546,7 +615,7 @@ const LAW_LEVEL_CONTENT = {
     ]
   },
   intermediate: {
-    intro: "Navigate disputes effectively using formal complaint pathways and escalation procedures.",
+    intro: "When things go wrong, knowing how to fight back properly is a superpower. No shouting needed — just the right steps in the right order, and you'll be surprised how far that gets you.",
     modules: [
       {
         title: "Use formal complaint and escalation procedures",
@@ -631,7 +700,7 @@ const LAW_LEVEL_CONTENT = {
     ]
   },
   advanced: {
-    intro: "Master complex disputes, negotiate contracts strategically, and represent yourself effectively.",
+    intro: "Advanced legal literacy that most adults don't even have. This is how you read the fine print, negotiate better deals, and make sure nobody ever catches you off guard again.",
     modules: [
       {
         title: "Negotiate and draft contract terms strategically",
@@ -720,7 +789,7 @@ const LAW_LEVEL_CONTENT = {
 // PERSONAL SAFETY AND SELF-DEFENCE - Prevention, de-escalation, and response
 const SAFETY_LEVEL_CONTENT = {
   beginner: {
-    intro: "Build daily awareness habits and establish safety communication networks.",
+    intro: "Most dangerous situations are actually avoidable. The real secret? Awareness and preparation before anything happens. Let's build the habits that keep you safe every single day.",
     modules: [
       {
         title: "Create daily awareness routines",
@@ -807,7 +876,7 @@ const SAFETY_LEVEL_CONTENT = {
     ]
   },
   intermediate: {
-    intro: "Learn advanced route planning, scenario drills, and physical boundary techniques.",
+    intro: "Time to go deeper. Route planning, practice drills, and physical skills — this is where you build the kind of confidence that actually holds up when pressure hits.",
     modules: [
       {
         title: "Map routes and risk factors for places you frequent",
@@ -886,7 +955,7 @@ const SAFETY_LEVEL_CONTENT = {
     ]
   },
   advanced: {
-    intro: "Develop comprehensive personal safety systems and teach others.",
+    intro: "Create a full safety system that protects you and the people around you. Then pass it on — knowing this stuff is too important to keep to yourself.",
     modules: [
       {
         title: "Design layered personal security protocols",
@@ -945,7 +1014,7 @@ const SAFETY_LEVEL_CONTENT = {
 // HEALTH AND FIRST AID - Wellness, emergency response, and prevention
 const HEALTH_LEVEL_CONTENT = {
   beginner: {
-    intro: "Establish basic health habits and prepare to respond to common emergencies.",
+    intro: "Your body runs literally everything — your mood, your energy, your ability to focus. Plus: knowing first aid could one day save someone's life. Let's start with the simple stuff that makes a big difference.",
     modules: [
       {
         title: "Build a first aid kit and store it properly",
@@ -1032,7 +1101,7 @@ const HEALTH_LEVEL_CONTENT = {
     ]
   },
   intermediate: {
-    intro: "Learn practical first aid skills and build preventive health systems.",
+    intro: "You've got the basics — now let's make your health habits actually stick. CPR, smart nutrition, and preventing problems before they become big ones.",
     modules: [
       {
         title: "Learn certified first aid techniques",
@@ -1109,7 +1178,7 @@ const HEALTH_LEVEL_CONTENT = {
     ]
   },
   advanced: {
-    intro: "Develop comprehensive health systems and lead family wellness planning.",
+    intro: "Build a full personal health system that prevents problems, handles emergencies, and stays strong for decades. This is serious long-game thinking.",
     modules: [
       {
         title: "Design comprehensive health and emergency plans",
@@ -1162,7 +1231,7 @@ const HEALTH_LEVEL_CONTENT = {
 // COMMUNICATION AND NEGOTIATION - Conversation skills and conflict resolution
 const COMMUNICATION_LEVEL_CONTENT = {
   beginner: {
-    intro: "Master basic conversation techniques and learn to set simple boundaries.",
+    intro: "Ever said the wrong thing and wished you could take it back? Or stayed quiet when you really needed to speak up? Communication is a skill — and you can get really good at it.",
     modules: [
       {
         title: "Practice the Fact-Impact-Request conversation framework",
@@ -1250,7 +1319,7 @@ const COMMUNICATION_LEVEL_CONTENT = {
     ]
   },
   intermediate: {
-    intro: "Run effective negotiations and resolve conflicts with structured approaches.",
+    intro: "From tough conversations to actual negotiations — this is where the real-world skills kick in. Salary talks, conflicts, agreements... it all comes down to how well you can communicate.",
     modules: [
       {
         title: "Conduct salary and contract negotiations",
@@ -1330,7 +1399,7 @@ const COMMUNICATION_LEVEL_CONTENT = {
     ]
   },
   advanced: {
-    intro: "Lead complex multi-stakeholder negotiations and coach others in communication.",
+    intro: "Master-level communication: leading high-pressure conversations, negotiating like a pro, and helping the people around you do the same. This is rare and valuable.",
     modules: [
       {
         title: "Facilitate multi-party negotiations",
@@ -1379,7 +1448,7 @@ const COMMUNICATION_LEVEL_CONTENT = {
 // CAREER AND WORK LITERACY - Job search, offers, and growth
 const CAREER_LEVEL_CONTENT = {
   beginner: {
-    intro: "Build foundational job search materials and understand offer basics.",
+    intro: "Your future career actually starts with what you do right now. Resume writing, networking, job hunting — let's break down how this all really works (it's not as scary as it looks).",
     modules: [
       {
         title: "Create and optimize your resume",
@@ -1463,7 +1532,7 @@ const CAREER_LEVEL_CONTENT = {
     ]
   },
   intermediate: {
-    intro: "Master interview preparation and negotiate job offers strategically.",
+    intro: "Time to stand out from the crowd. Learn how to nail interviews, show real impact, and negotiate your worth — no more leaving money on the table because you didn't ask!",
     modules: [
       {
         title: "Prepare interview stories and talking points",
@@ -1544,7 +1613,7 @@ const CAREER_LEVEL_CONTENT = {
     ]
   },
   advanced: {
-    intro: "Design long-term career strategy and build personal brand assets.",
+    intro: "Think strategically about your whole career, not just your next job. Personal brand, long-term positioning, knowing exactly when and how to make your next big move.",
     modules: [
       {
         title: "Develop long-term career roadmap",
@@ -1594,7 +1663,7 @@ const CAREER_LEVEL_CONTENT = {
 // DIGITAL LITERACY AND CYBER SAFETY - Account security and threat prevention
 const DIGITAL_LEVEL_CONTENT = {
   beginner: {
-    intro: "Protect your identity and devices from the most common threats.",
+    intro: "Hackers and scammers LOVE easy targets. But with a few simple habits, you can make yourself way too much trouble to mess with. Let's lock things down! 🔒",
     modules: [
       {
         title: "Secure your critical accounts immediately",
@@ -1678,7 +1747,7 @@ const DIGITAL_LEVEL_CONTENT = {
     ]
   },
   intermediate: {
-    intro: "Harden your devices and audit permissions and exposure.",
+    intro: "Level up your digital security. Time to audit your accounts, back up your important stuff, and harden your digital life against real threats you probably don't even know exist.",
     modules: [
       {
         title: "Audit account permissions and connected apps",
@@ -1753,7 +1822,7 @@ const DIGITAL_LEVEL_CONTENT = {
     ]
   },
   advanced: {
-    intro: "Use encryption, segmentation, and incident response procedures.",
+    intro: "Advanced digital security: encryption, account segmentation, and having a clear plan for when (not if!) something goes wrong online. This is how pros protect themselves.",
     modules: [
       {
         title: "Implement encryption and secure workflows",
@@ -1803,7 +1872,7 @@ const DIGITAL_LEVEL_CONTENT = {
 // HOME AND LIFE ADMINISTRATION - Systems for recurring tasks and organization
 const HOME_ADMIN_LEVEL_CONTENT = {
   beginner: {
-    intro: "Reduce stress by creating simple systems for bills, documents, and routines.",
+    intro: "Adulting 101 — the practical stuff nobody explicitly teaches you. Pay bills on time, keep your space sorted, and stop losing money to avoidable mistakes. You can absolutely do this.",
     modules: [
       {
         title: "Build bills and due dates dashboard",
@@ -1886,7 +1955,7 @@ const HOME_ADMIN_LEVEL_CONTENT = {
     ]
   },
   intermediate: {
-    intro: "Automate safely and design household workflows for efficiency.",
+    intro: "Beyond just surviving adult life — let's organise your household systems so they basically run themselves. Less chaos, more time for the things you actually enjoy.",
     modules: [
       {
         title: "Set up safe payment automation",
@@ -1927,7 +1996,7 @@ const HOME_ADMIN_LEVEL_CONTENT = {
     ]
   },
   advanced: {
-    intro: "Optimize household operations and build contingency systems.",
+    intro: "Build household systems that scale with your life. Long-term planning, maintenance schedules, and financial organisation that keeps everything running smoothly without constant stress.",
     modules: [
       {
         title: "Design comprehensive household operations system",
@@ -1965,7 +2034,7 @@ const HOME_ADMIN_LEVEL_CONTENT = {
 // COOKING AND EATING - Nutrition, meal planning, and kitchen skills
 const COOKING_LEVEL_CONTENT = {
   beginner: {
-    intro: "Learn practical cooking and nutrition to build sustainable eating habits.",
+    intro: "If you can follow instructions, you can cook! 🍳 Start here: basic techniques, simple balanced meals, and not accidentally setting the kitchen on fire. (It's easier than you think!)",
     modules: [
       {
         title: "Master kitchen safety and basic cooking techniques",
@@ -2049,7 +2118,7 @@ const COOKING_LEVEL_CONTENT = {
     ]
   },
   intermediate: {
-    intro: "Build meal planning systems and understand nutrition for your goals.",
+    intro: "Time to step up your food game. Meal planning, flavour combinations, and cooking efficiently for real life — not just survival mode. Your wallet and your body will thank you.",
     modules: [
       {
         title: "Plan weekly meals by budget and nutrition",
@@ -2109,7 +2178,7 @@ const COOKING_LEVEL_CONTENT = {
     ]
   },
   advanced: {
-    intro: "Design nutrition plans and cook for multiple dietary needs.",
+    intro: "Cook with real confidence and creativity. Adapt recipes, cook for other people, understand nutrition properly, and make food that actually tastes amazing every time.",
     modules: [
       {
         title: "Optimize nutrition for specific goals",
@@ -2147,7 +2216,7 @@ const COOKING_LEVEL_CONTENT = {
 // EMERGENCY CALLING AND RESPONSE - Structured response to emergencies
 const EMERGENCY_LEVEL_CONTENT = {
   beginner: {
-    intro: "Learn to call for help clearly and support responders effectively.",
+    intro: "Panic is the enemy in emergencies. Knowing the right steps in advance means you can actually help when it matters most — and trust us, being prepared makes ALL the difference.",
     modules: [
       {
         title: "Make emergency calls that get you help fast",
@@ -2231,7 +2300,7 @@ const EMERGENCY_LEVEL_CONTENT = {
     ]
   },
   intermediate: {
-    intro: "Manage emergency scenes and guide bystanders effectively.",
+    intro: "You've learned the basics — now let's build your emergency toolkit. Different situations, equipment you might need, and how to stay calm and coordinate help when things get serious.",
     modules: [
       {
         title: "Use step-by-step emergency call script",
@@ -2292,7 +2361,7 @@ const EMERGENCY_LEVEL_CONTENT = {
     ]
   },
   advanced: {
-    intro: "Lead household emergency drills and coordinate complex responses.",
+    intro: "Design emergency preparedness for your whole household. Practice drills, clear protocols, and confident leadership when things get really serious. Preparation is protection.",
     modules: [
       {
         title: "Prepare and run household emergency drills",
@@ -2385,9 +2454,12 @@ function setFavicon(href) {
 
 function renderTopic(selectedTopic, level) {
   const levelData = getLevelData(selectedTopic, level);
+  const visuals = TOPIC_VISUALS[selectedTopic.slug] || null;
   document.title = `${selectedTopic.name} | ${LEVEL_LABELS[level]} | The Real World Cirricullum`;
 
   headerRoot.innerHTML = `
+    ${visuals ? `<span class="topic-hero-badge" aria-hidden="true">${visuals.emoji}</span>` : ""}
+    ${visuals ? `<p class="topic-tagline">${visuals.tagline}</p>` : ""}
     <p class="eyebrow">Practical Track</p>
     <h1>${selectedTopic.name}</h1>
     <p>${levelData.intro || selectedTopic.summary}</p>
@@ -2407,7 +2479,7 @@ function renderTopic(selectedTopic, level) {
   `;
 
   attachTabHandlers(selectedTopic);
-  renderModules(levelData);
+  renderModules(levelData, selectedTopic);
   renderLevelFocus(selectedTopic, level);
   renderConceptsAndTerms(levelData);
   renderReferences(levelData, selectedTopic);
@@ -2415,12 +2487,12 @@ function renderTopic(selectedTopic, level) {
   renderQuiz(selectedTopic, levelData, level);
 
   firstActionRoot.innerHTML = `
-    <h3>First Action</h3>
+    <h3>🏁 Your First Move</h3>
     <p>${levelData.firstAction || selectedTopic.firstAction}</p>
   `;
 
   warningRoot.innerHTML = `
-    <h3>Important Note</h3>
+    <h3>⚠️ Real Talk</h3>
     <p>${levelData.warning || selectedTopic.warning}</p>
   `;
 }
@@ -2501,11 +2573,14 @@ function chunkByLevel(items, level) {
   return items.slice(start, end);
 }
 
-function renderModules(levelData) {
+function renderModules(levelData, selectedTopic) {
+  const visuals = selectedTopic ? TOPIC_VISUALS[selectedTopic.slug] : null;
+  const moduleEmojis = visuals ? visuals.moduleEmojis : [];
+
   modulesRoot.innerHTML = `
     <div class="section-head">
-      <h2>Learning Modules</h2>
-      <p>This page currently shows only the selected level content.</p>
+      <h2>What You'll Learn 📚</h2>
+      <p>Work through each module at your own pace — no rush!</p>
     </div>
     <div class="cards" id="module-cards"></div>
   `;
@@ -2515,19 +2590,31 @@ function renderModules(levelData) {
     const card = document.createElement("article");
     card.className = "card";
     card.style.animationDelay = `${index * 80}ms`;
+    const emoji = moduleEmojis[index % moduleEmojis.length] || "";
     card.innerHTML = `
+      ${emoji ? `<span class="module-icon" aria-hidden="true">${emoji}</span>` : ""}
       <h3>${index + 1}. ${module.title}</h3>
       <ul>${module.bullets.map((item) => `<li>${item}</li>`).join("")}</ul>
     `;
     moduleCards.appendChild(card);
+  }
+
+  if (visuals && visuals.funFact) {
+    const factBox = document.createElement("div");
+    factBox.className = "fun-fact-card";
+    factBox.innerHTML = `
+      <h4>Did You Know?</h4>
+      <p>${visuals.funFact}</p>
+    `;
+    modulesRoot.appendChild(factBox);
   }
 }
 
 function renderLevelFocus(selectedTopic, level) {
   levelRoot.innerHTML = `
     <div class="section-head">
-      <h2>${LEVEL_LABELS[level]} Goals</h2>
-      <p>Target these milestones before moving to the next level.</p>
+      <h2>Your Mission 🎯</h2>
+      <p>Hit these goals at this level before moving on — you've got this!</p>
     </div>
     <div class="quiz-shell">
       <ul>
@@ -2540,16 +2627,16 @@ function renderLevelFocus(selectedTopic, level) {
 function renderConceptsAndTerms(levelData) {
   languageRoot.innerHTML = `
     <div class="section-head">
-      <h2>Concepts, Terminology, and Key Questions</h2>
-      <p>Use this to build practical vocabulary and decision confidence.</p>
+      <h2>Words to Know + Big Questions 🤓</h2>
+      <p>Understanding these terms means you'll never be lost in a conversation about this topic.</p>
     </div>
     <div class="info-grid">
       <article class="card">
-        <h3>Core Concepts</h3>
+        <h3>🧩 Core Concepts</h3>
         <ul>${levelData.concepts.map((item) => `<li>${item}</li>`).join("")}</ul>
       </article>
       <article class="card">
-        <h3>Key Terminology</h3>
+        <h3>📖 Key Terms</h3>
         <ul>
           ${levelData.terminology
             .map((item) => `<li><strong>${item.term}:</strong> ${item.meaning}</li>`)
@@ -2557,7 +2644,7 @@ function renderConceptsAndTerms(levelData) {
         </ul>
       </article>
       <article class="card">
-        <h3>Common Questions</h3>
+        <h3>❓ Real Questions People Ask</h3>
         <ul>
           ${levelData.questions
             .map((item) => `<li><strong>${item.q}</strong><br />${item.a}</li>`)
@@ -2573,8 +2660,8 @@ function renderReferences(levelData, selectedTopic) {
 
   referencesRoot.innerHTML = `
     <div class="section-head">
-      <h2>References</h2>
-      <p>Use these trusted sources to validate and deepen learning.</p>
+      <h2>Where to Learn More 🔗</h2>
+      <p>These trusted sources go deeper — bookmark the ones that interest you!</p>
     </div>
     <div class="quiz-shell">
       <ul class="reference-list">
@@ -2592,16 +2679,16 @@ function renderSupport(levelData, selectedTopic) {
 
   supportRoot.innerHTML = `
     <div class="section-head">
-      <h2>Find More and What To Do If Things Go Wrong</h2>
-      <p>Use this section when you need deeper help or recovery steps.</p>
+      <h2>Go Deeper + When Things Get Tough 💪</h2>
+      <p>Stuck or something went wrong? These steps will help you get back on track.</p>
     </div>
     <div class="info-grid">
       <article class="card">
-        <h3>How To Find More</h3>
+        <h3>🔍 Want to Learn Even More?</h3>
         <ul>${findMore.map((item) => `<li>${item}</li>`).join("")}</ul>
       </article>
       <article class="card">
-        <h3>When Things Go Wrong</h3>
+        <h3>🆘 When Things Go Wrong</h3>
         <ul>${recovery.map((item) => `<li>${item}</li>`).join("")}</ul>
       </article>
     </div>
