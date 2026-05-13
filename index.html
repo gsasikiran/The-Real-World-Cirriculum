@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#topics">Skip to content</a>
+    <div class="progress-bar" id="progress-bar" aria-hidden="true"></div>
     <header class="hero">
       <nav class="top-nav">
         <div class="brand">The Real World Cirricullum</div>
@@ -26,7 +28,7 @@
 
       <div class="hero-content">
         <p class="eyebrow">Real-World Learning</p>
-        <h1>Skills You Need in Life, Not Just in Exams</h1>
+        <h1>Skills You Require In Real World</h1>
         <p>
           Build confidence in personal finance, basic law, safety, communication,
           and everyday decision-making with practical, beginner-friendly guides.
@@ -59,5 +61,17 @@
 
     <script src="topics-data.js"></script>
     <script src="script.js"></script>
+    <script>
+      // Sticky nav
+      const nav = document.querySelector('.top-nav');
+      const progressBar = document.getElementById('progress-bar');
+      window.addEventListener('scroll', () => {
+        const scrolled = window.scrollY > 20;
+        nav.classList.toggle('scrolled', scrolled);
+        // Progress bar
+        const docH = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = docH > 0 ? (window.scrollY / docH * 100) + '%' : '0%';
+      }, { passive: true });
+    </script>
   </body>
 </html>

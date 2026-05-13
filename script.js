@@ -28,6 +28,9 @@ for (const [index, topic] of sortedTopics.entries()) {
   const card = document.createElement("article");
   card.className = "card topic-card";
   card.style.animationDelay = `${index * 90}ms`;
+  card.setAttribute("tabindex", "0");
+  card.setAttribute("role", "button");
+  card.setAttribute("aria-label", `Open ${topic.name} track`);
 
   card.innerHTML = `
     <span class="badge">Beginner -> Advanced</span>
@@ -39,8 +42,13 @@ for (const [index, topic] of sortedTopics.entries()) {
     <ul>
       ${topic.points.map((item) => `<li>${item}</li>`).join("")}
     </ul>
-    <a class="card-link" href="${topic.page}">Open track</a>
+    <a class="card-link" href="${topic.page}" tabindex="-1" aria-hidden="true">Open track</a>
   `;
+
+  // Make the whole card clickable/keyboard-navigable
+  const navigate = () => { window.location.href = topic.page; };
+  card.addEventListener("click", navigate);
+  card.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); navigate(); } });
 
   cardsRoot.appendChild(card);
 }
